@@ -5,6 +5,9 @@
  */
 package controleur;
 
+import metier.Client;
+import metier.ClientsManager;
+
 /**
  *
  * @author EK
@@ -18,7 +21,9 @@ public class SessionPasserCommande {
         
     }
     
-    public void traiterIdentification(String pseudo, String motDePasse){
-        
+    public Client traiterIdentification(String pseudo, String motDePasse){
+        ClientsManager cm = new ClientsManager();
+        Client c = cm.rechercherClientParPseudo(pseudo, motDePasse);
+        return c;
     }
 }

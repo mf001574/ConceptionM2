@@ -1,5 +1,6 @@
 package metier;
 
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,10 +12,13 @@ package metier;
  * @author EK
  */
 public class ClientsManager {
-    private String pseudo;
-    private String motDePasse;
     
-    public void rechercherClientParPseudo(String pseudo, String motDePasse){
-        
+
+    
+    /*Fait une requete sql sur le SQBD*/
+    public Client rechercherClientParPseudo(String pseudo, String motDePasse){
+        String r = "Select * from Client where pseudo="+pseudo+" and motDePasse="+motDePasse;
+        Client c = new Client(pseudo,"Jean",motDePasse);
+        return c;
     }
 }
